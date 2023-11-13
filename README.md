@@ -1,5 +1,5 @@
 # Circle CI status
-[![CircleCI](https://circleci.com/gh/T128CL216/project-ml-microservice-kubernetes.svg?style=svg)] (https://app.circleci.com/pipelines/github/T128CL216/project-ml-microservice-kubernetes)
+[![CircleCI](https://circleci.com/gh/T128CL216/project-ml-microservice-kubernetes.svg?style=svg)]
 
 ## Project Overview
 
