@@ -1,1 +1,162 @@
-<paste log output from Docker prediction, here>
+Sending build context to Docker daemon  1.131MB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 104daa811373
+Step 3/6 : COPY . app.py /app/
+ ---> a62b9cef9199
+Step 4/6 : RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
+ ---> Running in b92fdb4b151c
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/47/6a/453160888fab7c6a432a6e25f8afe6256d0d9f2cbd25971021da6491d899/pip-23.3.1-py3-none-any.whl (2.1MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.1.1
+    Uninstalling pip-19.1.1:
+      Successfully uninstalled pip-19.1.1
+Successfully installed pip-23.3.1
+Collecting Click==7.0 (from -r requirements.txt (line 1))
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.3/81.3 kB 21.7 MB/s eta 0:00:00
+Collecting Flask==1.0.2 (from -r requirements.txt (line 2))
+  Downloading Flask-1.0.2-py2.py3-none-any.whl (91 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.4/91.4 kB 107.7 MB/s eta 0:00:00
+Collecting itsdangerous==1.1.0 (from -r requirements.txt (line 3))
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Jinja2==2.10.3 (from -r requirements.txt (line 4))
+  Downloading Jinja2-2.10.3-py2.py3-none-any.whl (125 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.3/125.3 kB 125.6 MB/s eta 0:00:00
+Collecting MarkupSafe==1.1.1 (from -r requirements.txt (line 5))
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux2010_x86_64.whl (33 kB)
+Collecting numpy==1.21.2 (from -r requirements.txt (line 6))
+  Downloading numpy-1.21.2-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 78.7 MB/s eta 0:00:00
+Collecting pandas (from -r requirements.txt (line 7))
+  Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 110.8 MB/s eta 0:00:00
+Collecting python-dateutil==2.8.0 (from -r requirements.txt (line 8))
+  Downloading python_dateutil-2.8.0-py2.py3-none-any.whl (226 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.8/226.8 kB 156.5 MB/s eta 0:00:00
+Collecting pytz==2019.3 (from -r requirements.txt (line 9))
+  Downloading pytz-2019.3-py2.py3-none-any.whl (509 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 72.2 MB/s eta 0:00:00
+Collecting scikit-learn==0.20.2 (from -r requirements.txt (line 10))
+  Downloading scikit_learn-0.20.2-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 117.8 MB/s eta 0:00:00
+Collecting scipy==1.7.3 (from -r requirements.txt (line 11))
+  Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.1/38.1 MB 92.6 MB/s eta 0:00:00
+Collecting six==1.12.0 (from -r requirements.txt (line 12))
+  Downloading six-1.12.0-py2.py3-none-any.whl (10 kB)
+Collecting Werkzeug==0.16.0 (from -r requirements.txt (line 13))
+  Downloading Werkzeug-0.16.0-py2.py3-none-any.whl (327 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 327.3/327.3 kB 142.1 MB/s eta 0:00:00
+Collecting pylint==2.4.4 (from -r requirements.txt (line 14))
+  Downloading pylint-2.4.4-py3-none-any.whl (302 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 303.0/303.0 kB 144.5 MB/s eta 0:00:00
+Collecting urllib3==1.25.11 (from -r requirements.txt (line 15))
+  Downloading urllib3-1.25.11-py2.py3-none-any.whl (127 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.0/128.0 kB 124.3 MB/s eta 0:00:00
+Collecting astroid<2.4,>=2.3.0 (from pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading astroid-2.3.3-py3-none-any.whl (205 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 205.7/205.7 kB 141.0 MB/s eta 0:00:00
+Collecting isort<5,>=4.2.5 (from pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.3/42.3 kB 84.7 MB/s eta 0:00:00
+Collecting mccabe<0.7,>=0.6 (from pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting lazy-object-proxy==1.4.* (from astroid<2.4,>=2.3.0->pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading lazy_object_proxy-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (56 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.5/56.5 kB 96.2 MB/s eta 0:00:00
+Collecting wrapt==1.11.* (from astroid<2.4,>=2.3.0->pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading wrapt-1.11.2.tar.gz (27 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting typed-ast<1.5,>=1.4.0 (from astroid<2.4,>=2.3.0->pylint==2.4.4->-r requirements.txt (line 14))
+  Downloading typed_ast-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (743 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 743.4/743.4 kB 137.3 MB/s eta 0:00:00
+Building wheels for collected packages: wrapt
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.11.2-cp37-cp37m-linux_x86_64.whl size=71336 sha256=2a5cfbd48852adc5a88707da8d9108c46e6886efdbda9f81cb26954a8252e664
+  Stored in directory: /tmp/pip-ephem-wheel-cache-9jy4w7ya/wheels/23/5f/62/304b411f20be41821465a82bc98baabc5e68c3cdd1eb99db71
+Successfully built wrapt
+Installing collected packages: wrapt, typed-ast, pytz, mccabe, Werkzeug, urllib3, six, numpy, MarkupSafe, lazy-object-proxy, itsdangerous, isort, Click, scipy, python-dateutil, Jinja2, astroid, scikit-learn, pylint, pandas, Flask
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 astroid-2.3.3 isort-4.3.21 itsdangerous-1.1.0 lazy-object-proxy-1.4.3 mccabe-0.6.1 numpy-1.21.2 pandas-1.3.5 pylint-2.4.4 python-dateutil-2.8.0 pytz-2019.3 scikit-learn-0.20.2 scipy-1.7.3 six-1.12.0 typed-ast-1.4.3 urllib3-1.25.11 wrapt-1.11.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Removing intermediate container b92fdb4b151c
+ ---> 572453d5049e
+Step 5/6 : EXPOSE 80
+ ---> Running in 30f293c58d97
+Removing intermediate container 30f293c58d97
+ ---> 89db3f692291
+Step 6/6 : CMD [ "python", "app.py" ]
+ ---> Running in c0e590b1df3b
+Removing intermediate container c0e590b1df3b
+ ---> 0503295cdce2
+Successfully built 0503295cdce2
+Successfully tagged t128cl216/project-docker:v1.0.0
+REPOSITORY                            TAG                IMAGE ID       CREATED          SIZE
+t128cl216/project-docker              v1.0.0             0503295cdce2   20 seconds ago   1.22GB
+<none>                                <none>             fefe3a7bb783   2 hours ago      1.22GB
+<none>                                <none>             6948ed32738c   2 hours ago      1.22GB
+<none>                                <none>             953ec98bb072   3 hours ago      1.22GB
+<none>                                <none>             c58fe70261bf   3 hours ago      1.22GB
+<none>                                <none>             d533b5ca01fd   3 hours ago      1.22GB
+python-helloworld                     latest             f6adf7c889d5   2 days ago       1.01GB
+t128cl216/python-helloworld           v1.0.0             f6adf7c889d5   2 days ago       1.01GB
+t128cl216/udacity/python-helloworld   v1.0.0             f6adf7c889d5   2 days ago       1.01GB
+<none>                                <none>             33701483a7c3   2 days ago       1.01GB
+api                                   latest             ca0e7d77c325   3 days ago       1.37GB
+<none>                                <none>             c66e0022334b   3 days ago       929MB
+<none>                                <none>             6a1c047c866f   3 days ago       929MB
+<none>                                <none>             86f8a545427e   3 days ago       1.45GB
+<none>                                <none>             08a51d9a4509   3 days ago       937MB
+<none>                                <none>             efa92faab50f   3 days ago       929MB
+public.ecr.aws/lambda/python          3.8-rapid-x86_64   e86cd44356b6   5 days ago       650MB
+public.ecr.aws/lambda/python          3.9-rapid-x86_64   95322a595c5a   6 days ago       622MB
+public.ecr.aws/lambda/python          3.8-x86_64         a00d7145cc1d   10 days ago      633MB
+public.ecr.aws/lambda/python          3.9-x86_64         f078c6cc72c6   10 days ago      606MB
+public.ecr.aws/sam/build-python3.9    latest-x86_64      44f31f0c334b   13 days ago      1.7GB
+python                                3.8                795c73a8d985   4 weeks ago      998MB
+python                                3.7.3-stretch      34a518642c76   4 years ago      929MB
+python                                3.8.0b1-stretch    5f77328ee5b7   4 years ago      937MB
+/usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from ._gradient_boosting import predict_stages
+/usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from ._gradient_boosting import predict_stages
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator DecisionTreeRegressor from version 0.20.3 when using version 0.20.2. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator GradientBoostingRegressor from version 0.20.3 when using version 0.20.2. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+/usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from ._gradient_boosting import predict_stages
+/usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  from ._gradient_boosting import predict_stages
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator DecisionTreeRegressor from version 0.20.3 when using version 0.20.2. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+/usr/local/lib/python3.7/site-packages/sklearn/base.py:251: UserWarning: Trying to unpickle estimator GradientBoostingRegressor from version 0.20.3 when using version 0.20.2. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+ * Debugger is active!
+ * Debugger PIN: 836-148-179
+[2023-11-13 20:15:05,038] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2023-11-13 20:15:05,058] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2023-11-13 20:15:05,072] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2023-11-13 20:15:05,076] INFO in app: Output prediction Value : [20.35373177134412]
+172.17.0.1 - - [13/Nov/2023 20:15:05] "POST /predict HTTP/1.1" 200 -
