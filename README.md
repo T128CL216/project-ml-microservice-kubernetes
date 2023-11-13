@@ -1,3 +1,6 @@
+# Circle CI status
+[![CircleCI](https://circleci.com/gh/T128CL216/project-ml-microservice-kubernetes.svg?style=svg)] (https://app.circleci.com/pipelines/github/T128CL216/project-ml-microservice-kubernetes)
+
 ## Project Overview
 
 In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
